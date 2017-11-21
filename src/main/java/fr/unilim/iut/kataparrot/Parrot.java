@@ -2,6 +2,7 @@ package fr.unilim.iut.kataparrot;
 
 public class Parrot {
 
+	private static final double BASE_SPEED = 12.0;
 	private ParrotTypeEnum type;
 	private double voltage;
 	private boolean isNailed;
@@ -25,15 +26,11 @@ public class Parrot {
 	}
 
 	protected double getBaseSpeed(double voltage) {
-		return Math.min(24.0, voltage * getBaseSpeed());
-	}
-
-	protected double getLoadFactor() {
-		return 9.0;
+		return Math.min(BASE_SPEED*2, voltage * getBaseSpeed());
 	}
 
 	protected double getBaseSpeed() {
-		return 12.0;
+		return BASE_SPEED;
 	}
 
 }
